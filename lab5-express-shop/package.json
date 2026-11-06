@@ -1,0 +1,21 @@
+{
+  "name": "express-shop-lab5",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ЛР 5. Создание и использование middleware в Express.js",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [
+    "express",
+    "rest-api",
+    "lab"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}

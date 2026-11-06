@@ -1,0 +1,21 @@
+{
+  "name": "express-shop-lab7",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ЛР 7. Разработка REST API и CRUD-операций",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [
+    "express",
+    "rest-api",
+    "lab"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}

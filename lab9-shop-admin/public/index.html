@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Admin — учебная панель</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Shop Admin</h1>
+      <p>Учебная административная панель</p>
+    </div>
+    <span class="badge">REST API + Fetch</span>
+  </header>
+
+  <nav class="tabs" aria-label="Разделы панели">
+    <button class="tab is-active" data-tab="products" type="button">Товары</button>
+    <button class="tab" data-tab="categories" type="button">Категории</button>
+  </nav>
+
+  <main class="content">
+    <section id="products-panel" class="panel is-active">
+      <div class="panel-head">
+        <h2>Товары</h2>
+        <p>Список загружается через GET /api/products</p>
+      </div>
+
+      <form id="product-form" class="card form">
+        <div class="field">
+          <label for="product-name">Название</label>
+          <input id="product-name" name="name" type="text" required placeholder="Например, Keyboard">
+        </div>
+        <div class="field">
+          <label for="product-price">Цена, ₸</label>
+          <input id="product-price" name="price" type="number" min="1" step="1" required placeholder="15000">
+        </div>
+        <div class="field">
+          <label for="product-category">Категория</label>
+          <input id="product-category" name="category" type="text" required placeholder="Accessories">
+        </div>
+        <label class="checkbox">
+          <input id="product-instock" name="inStock" type="checkbox" checked>
+          В наличии
+        </label>
+        <button type="submit">Добавить товар</button>
+      </form>
+
+      <p id="product-message" class="message" role="status"></p>
+
+      <div class="card table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Название</th>
+              <th>Цена</th>
+              <th>Категория</th>
+              <th>В наличии</th>
+            </tr>
+          </thead>
+          <tbody id="products"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="categories-panel" class="panel">
+      <div class="panel-head">
+        <h2>Категории</h2>
+        <p>GET и POST без перезагрузки страницы</p>
+      </div>
+
+      <form id="category-form" class="card form">
+        <div class="field field--wide">
+          <label for="category-name">Название категории</label>
+          <input id="category-name" name="name" type="text" required placeholder="Например, Accessories">
+        </div>
+        <button type="submit">Добавить категорию</button>
+      </form>
+
+      <p id="category-message" class="message" role="status"></p>
+
+      <div class="card">
+        <ul id="categories" class="category-list">
+          <li class="empty">Категорий пока нет</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
